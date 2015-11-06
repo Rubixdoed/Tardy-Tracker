@@ -2,6 +2,11 @@
 import java.awt.Canvas;
 import java.awt.JFrame;
 
+// Render Imports
+import java.awt.BufferedImage;
+import java.awt.BufferStrategy;
+import java.awt.Graphics;
+
 /**
  * @author Zachary Stroud
  * @version 1.0
