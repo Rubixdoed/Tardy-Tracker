@@ -11,6 +11,7 @@ public class Core extends Canvas{
 	
 	public static int WIDTH,HEIGHT;
 	public static int FPS;
+	public static boolean running;
 	
 	public Core(int w, int h, int fps){
 		WIDTH = w;
@@ -22,12 +23,17 @@ public class Core extends Canvas{
 		
 	}
 	
+	public static void stop(){
+		running = false;
+		// exit code
+	}
+	
 	public void init(){
 		
 	}
 	
 	public static void main(String[] args){
-		// Args format: <int:width> <int:height>
+		// Args format: <int:width> <int:height> <int:fps>
 		
 		int w,h,fps;
 		if(args.length >= 2){
