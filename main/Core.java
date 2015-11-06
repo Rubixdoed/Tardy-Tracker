@@ -16,6 +16,8 @@ public class Core extends Canvas{
 	public BufferedImage frame;
 	public Graphics g;
 	
+	private StateManager sm;
+	
 	public Core(int w, int h, int fps){
 		WIDTH = w;
 		HEIGHT = h;
@@ -61,11 +63,11 @@ public class Core extends Canvas{
 	}
 	
 	public void update(){
-		
+		sm.update(1.0); // default value
 	}
 	
 	public void render(){
-		
+		sm.render(g);
 	}
 	
 	public void draw(){
@@ -80,6 +82,16 @@ public class Core extends Canvas{
 		dg.dispose();
 		
 		bs.show();
+	}
+	
+	public void keyPress(char c){
+		sm.keyPress(c);
+	}
+	public void mouseClick(){
+		sm.mouseClick();
+	}
+	public void mouseScroll(int dir){
+		sm.mouseScroll(dir);
 	}
 	
 	public static void main(String[] args){
