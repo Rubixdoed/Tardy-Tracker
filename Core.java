@@ -13,6 +13,9 @@ public class Core extends Canvas{
 	public static int FPS;
 	public static boolean running;
 	
+	public BufferedImage frame;
+	public Graphics g;
+	
 	public Core(int w, int h, int fps){
 		WIDTH = w;
 		HEIGHT = h;
@@ -20,7 +23,8 @@ public class Core extends Canvas{
 	}
 	
 	public void start(){
-		
+		init();
+		run();
 	}
 	
 	public static void stop(){
@@ -29,7 +33,53 @@ public class Core extends Canvas{
 	}
 	
 	public void init(){
+		frame = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
+		g = frame.getGraphics();
+	}
+	
+	public void run(){
+		long startTime,updateTime;
+		int FPS = 1000/this.FPS;
 		
+		running = true;
+		while(running){
+			startTime = System.nanoTime();
+			
+			update();
+			render();
+			draw();
+			
+			updateTime = (System.nanoTime() - startTime)/1000000;
+			if(FPS - updateTime > 0){
+				try{
+					Thread.sleep(FPS - updateTime);
+				} catch(Exception e){
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
+	public void update(){
+		
+	}
+	
+	public void render(){
+		
+	}
+	
+	public void draw(){
+		BufferStrategy bs = getBufferStrategy();
+		if(bs == null){
+			createBufferStrategy(2);
+			return;
+		}
+		
+		Graphics dg = bs.getDrawGraphics();
+		dg.drawImage(frame,0,0,null);
+		dg.dispose();
+		
+		bs.show();
 	}
 	
 	public static void main(String[] args){
