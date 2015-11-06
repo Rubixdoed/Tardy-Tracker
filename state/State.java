@@ -1,8 +1,8 @@
 public abstract class State{
 	
-	protected GameStateManager gsm;
-	public State(GameStateManager gsm){
-		this.gsm = gsm;
+	protected StateManager sm;
+	public State(StateManager sm){
+		this.sm = sm;
 	}
 	
 	public abstract void init(String[] args);
