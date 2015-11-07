@@ -1,3 +1,5 @@
+package main;
+
 // Frame Imports
 import java.awt.Canvas;
 import java.awt.JFrame;
