@@ -2,28 +2,28 @@ package state;
 
 public class MainMenuState extends State{
 	
-	public abstract void init(String[] args){
+	public void init(String[] args){
 		
 	}
 	
-	public abstract void update(double time){
+	public void update(double time){
 		
 	}
 	
-	public abstract void render(java.awt.Graphics g){
+	public void render(java.awt.Graphics g){
 		
 	}
 	
 	
-	public abstract void keyPress(char c){
+	public void keyPress(char c){
 		
 	}
 	
-	public abstract void mouseClick(){
+	public void mouseClick(){
 		
 	}
 	
-	public abstract void mouseScroll(int dir){
+	public void mouseScroll(int dir){
 		
 	}
 	
