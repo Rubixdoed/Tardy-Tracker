@@ -2,6 +2,10 @@ package state;
 
 public class MainMenuState extends State{
 	
+	public MainMenuState(StateManager sm) {
+		super(sm);
+	}
+	
 	public void init(String[] args){
 		
 	}
