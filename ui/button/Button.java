@@ -14,6 +14,6 @@ public abstract class Button{
 		this.action = action;
 	}
 	
-	public abstract void render(java.awt.graphics);
+	public abstract void render(java.awt.Graphics g);
 	
 }
