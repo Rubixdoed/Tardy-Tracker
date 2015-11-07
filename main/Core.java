@@ -47,6 +47,8 @@ public class Core extends Canvas{
 	public void init(){
 		frame = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 		g = frame.getGraphics();
+		
+		sm = new StateManager();
 	}
 	
 	public void run(){
