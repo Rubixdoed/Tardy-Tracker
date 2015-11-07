@@ -2,12 +2,15 @@ package main;
 
 // Frame Imports
 import java.awt.Canvas;
-import java.awt.JFrame;
+import java.awt.Dimension;
+import javax.swing.JFrame;
 
 // Render Imports
-import java.awt.BufferedImage;
-import java.awt.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.awt.image.BufferStrategy;
 import java.awt.Graphics;
+
+import state.StateManager;
 
 /**
  * @author Zachary Stroud
@@ -102,7 +105,7 @@ public class Core extends Canvas{
 	}
 	
 	public static void main(String[] args){
-		// Args format: <int:width> <int:height> <int:fps>
+		// args format: <int:width> <int:height> <int:fps>
 		
 		int w,h,fps;
 		if(args.length >= 2){
@@ -110,7 +113,7 @@ public class Core extends Canvas{
 			h = Integer.parseInt(args[1]);
 		} else {
 			w = (int)java.awt.Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-			h = (int)java.awt.ToolKit.getDefaultToolkit().getScreenSize().getHeight();
+			h = (int)java.awt.Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		}
 		
 		if(args.length >= 3){
@@ -126,7 +129,7 @@ public class Core extends Canvas{
 		core.setMaximumSize(frameSize);
 		
 		JFrame f = new JFrame();
-		f.setDefaultCloseOperation();
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		f.setResizable(false);
 		f.setUndecorated( args.length < 2 );
