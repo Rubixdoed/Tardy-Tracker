@@ -16,7 +16,7 @@ public class StateManager{
 	public static final int STATE_MAINMENUSTATE = 0;
 	
 	public StateManager(){
-		states = new Arraylist<State>();
+		states = new ArrayList<State>();
 		
 		states.add(new MainMenuState(this));
 		
