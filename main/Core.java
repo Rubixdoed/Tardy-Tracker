@@ -23,8 +23,14 @@ public class Core extends Canvas{
 	public static int FPS;
 	public static boolean running;
 	
-	public BufferedImage frame;
-	public Graphics g;
+	public static boolean DEBUG;
+	private double FPS_TIMER;
+	private int FPS_COUNT,FPS_DISPLAY;
+	
+	private long lastUpdate;
+	
+	private BufferedImage frame;
+	private Graphics g;
 	
 	private StateManager sm;
 	
@@ -53,8 +59,9 @@ public class Core extends Canvas{
 	
 	public void run(){
 		long startTime,updateTime;
-		int FPS = 1000/this.FPS;
+		int FPS = 1000/Core.FPS;
 		
+		lastUpdate = System.nanoTime();
 		running = true;
 		while(running){
 			startTime = System.nanoTime();
@@ -75,7 +82,20 @@ public class Core extends Canvas{
 	}
 	
 	public void update(){
+		double time = (System.nanoTime() - lastUpdate)/1000000.0;
+		lastUpdate = System.nanoTime();
+		
 		sm.update(1.0); // default value
+		
+		if(DEBUG){
+			FPS_TIMER += time;
+			if(FPS_TIMER >= 1000){
+				FPS_TIMER %= 1000;
+				FPS_DISPLAY = FPS_COUNT;
+				FPS_COUNT = 0;
+				System.out.println("FPS: " + FPS_DISPLAY);
+			}
+		}
 	}
 	
 	public void render(){
