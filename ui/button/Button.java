@@ -1,5 +1,8 @@
 package ui.button;
 
+import input.Inputs;
+import util.CollisionUtils;
+
 public abstract class Button{
 	
 	protected int x,y;
