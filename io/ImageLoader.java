@@ -21,7 +21,7 @@ public class ImageLoader{
 		int across = source.getWidth()/width;
 		BufferedImage[] imgs = new BufferedImage[across];
 		for(int i = 0; i < across; i++){
-			imgs[i] = source.subimage(i*width,0,width,parent.getHeight());
+			imgs[i] = source.getSubimage(i*width,0,width,source.getHeight());
 		}
 		return imgs;
 	}
@@ -34,7 +34,7 @@ public class ImageLoader{
 		BufferedImage[] imgs = new BufferedImage[across*down];
 		for(int i = 0; i < down; i++){
 			for(int j = 0; j < across; j++){
-				imgs[j + i*across] = parent.subimage(j*width, i*height, width, height);
+				imgs[j + i*across] = source.getSubimage(j*width, i*height, width, height);
 			}
 		}
 		return imgs;
