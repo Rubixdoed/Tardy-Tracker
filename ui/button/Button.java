@@ -6,6 +6,8 @@ public abstract class Button{
 	private int w,h;
 	private String action;
 	
+	private boolean mouseOver,active;
+	
 	public Button(int x, int y, int w, int h, String action){
 		this.x = x;
 		this.y = y;
@@ -14,6 +16,28 @@ public abstract class Button{
 		this.action = action;
 	}
 	
+	public void setActive(boolean active){
+		this.active = active;
+	}
+	public void toggleActive(){
+		active = !active;
+	}
+	
+	public void update(){
+		mouseOver = CollisionUtils.pointInRectangle(Inputs.xMouse,Inputs.yMouse,x,y,w,h);
+	}
+	
 	public abstract void render(java.awt.Graphics g);
+	
+	public boolean isMouseOver(){
+		return mouseOver && active;
+	}
+	public boolean isActive(){
+		return active;
+	}
+	
+	public String getAction(){
+		return action;
+	}
 	
 }
