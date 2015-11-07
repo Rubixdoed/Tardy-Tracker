@@ -1,9 +1,0 @@
-package util;
-
-public class CollisionUtils{
-	
-	public static boolean pointInRectangle(int px, int py, int x, int y, int w, int h){
-		return px >= x && px < x+w && py >= y && py < y+h;
-	}
-	
-}
