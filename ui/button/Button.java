@@ -2,11 +2,11 @@ package ui.button;
 
 public abstract class Button{
 	
-	private int x,y;
-	private int w,h;
-	private String action;
+	protected int x,y;
+	protected int w,h;
+	protected String action;
 	
-	private boolean mouseOver,active;
+	protected boolean mouseOver,active;
 	
 	public Button(int x, int y, int w, int h, String action){
 		this.x = x;
