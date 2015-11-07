@@ -1,4 +1,6 @@
-public class Button{
+package ui.button;
+
+public abstract class Button{
 	
 	private int x,y;
 	private int w,h;
