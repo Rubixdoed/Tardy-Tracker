@@ -1,3 +1,5 @@
+package state;
+
 public abstract class State{
 	
 	protected StateManager sm;
