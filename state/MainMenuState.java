@@ -1,3 +1,5 @@
+package state;
+
 public class MainMenuState extends State{
 	
 	public abstract void init(String[] args){
